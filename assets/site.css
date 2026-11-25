@@ -625,3 +625,16 @@ section .cta-band>.steps-inline+.btn{margin-top:28px}
 .mol3d line{stroke:#7fa3ac;stroke-linecap:round}
 .mol-pending{stroke:var(--accent);stroke-width:1.2;stroke-dasharray:4 6}
 @media(max-width:900px){.mol3d{display:none}}
+
+/* =========================================================
+   v4.5 · Moléculas 3D vetoriais na abertura das páginas internas
+   ========================================================= */
+.intro-art.is-replaced{display:none}
+.intro-mol{width:100%;height:clamp(200px,24vw,330px);display:flex;align-items:center;justify-content:center}
+.intro-mol svg{width:100%;height:100%;overflow:visible}
+.intro-mol line{stroke:#7fa3ac;stroke-linecap:round}
+@media(max-width:768px){.intro-mol{height:200px;margin-top:8px}}
+@media(max-width:480px){
+  h1{hyphens:manual;-webkit-hyphens:manual}
+  .page-intro h1{font-size:clamp(28px,8.6vw,40px)}
+}
