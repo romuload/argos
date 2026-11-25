@@ -513,3 +513,79 @@ section .cta-band>p+p{margin-top:8px}
 }
 /* faixas de mesmo fundo em sequência ganham divisória */
 .page-content>section.dark-section+section.cta-band,.page-content>section.cta-band+section.cta-band,.page-content>section.cta-band+section.dark-section,.page-content>section.dark-section+section.dark-section{border-top:1px solid var(--line)}
+
+/* =========================================================
+   v4.2 · Motion com propósito
+   ========================================================= */
+
+/* 1 e 3 · Trilha de progresso das etapas (tracejada onde a validação está pendente) */
+.scrolly-steps{--rail-gap:44px;--p:0;--ps:100%;--rail-top:0px;--rail-bottom:0px;position:relative;padding-left:var(--rail-gap)}
+.scrolly-steps::before,.scrolly-steps::after{content:'';position:absolute;left:0;top:var(--rail-top);bottom:var(--rail-bottom);width:2px;border-radius:2px}
+.scrolly-steps::before{background:
+  linear-gradient(var(--line),var(--line)) top/100% var(--ps) no-repeat,
+  repeating-linear-gradient(to bottom,var(--line) 0 6px,transparent 6px 12px)}
+.scrolly-steps::after{background:
+  linear-gradient(var(--accent),var(--accent)) top/100% var(--ps) no-repeat,
+  repeating-linear-gradient(to bottom,var(--accent) 0 6px,transparent 6px 12px);
+  clip-path:inset(0 0 calc(100% - var(--p) * 100%) 0)}
+.scrolly-num{position:relative}
+.scrolly-num::before{content:'';position:absolute;left:calc(-1 * var(--rail-gap) - 5px);top:50%;width:12px;height:12px;margin-top:-6px;border-radius:50%;background:var(--paper);border:2px solid var(--line);box-sizing:border-box;transition:background-color .35s var(--ease),border-color .35s var(--ease)}
+.scrolly-step.is-past .scrolly-num::before,.scrolly-step.is-active .scrolly-num::before{border-color:var(--accent)}
+.scrolly-step.is-past .scrolly-num::before{background:var(--accent)}
+.scrolly-step:last-child .scrolly-num::before{border-style:dashed}
+.scrolly-step:last-child.is-active .scrolly-num::before{background:var(--paper)}
+@media(max-width:900px){.scrolly-steps{--rail-gap:28px}}
+
+/* 2 · Troca de imagens com leve aproximação */
+.scrolly-img{transform:scale(1.04);transition:opacity .8s var(--ease),transform 1.4s var(--ease)}
+.scrolly-img.is-active{transform:scale(1)}
+
+/* 4 · Tabela: amostras primeiro, pareceres depois */
+.js-motion table.seq tbody tr{opacity:0;transform:translateY(10px);transition:opacity .5s var(--ease),transform .5s var(--ease)}
+.js-motion table.seq .verdict{opacity:0;transition:opacity .45s var(--ease)}
+.js-motion table.seq.is-in tbody tr{opacity:1;transform:none}
+.js-motion table.seq.is-in .verdict{opacity:1}
+.js-motion table.seq.is-in tbody tr:nth-child(2){transition-delay:80ms}
+.js-motion table.seq.is-in tbody tr:nth-child(3){transition-delay:160ms}
+.js-motion table.seq.is-in tbody tr:nth-child(4){transition-delay:240ms}
+.js-motion table.seq.is-in tbody tr:nth-child(n+5){transition-delay:320ms}
+.js-motion table.seq.is-in tbody tr:nth-child(1) .verdict{transition-delay:520ms}
+.js-motion table.seq.is-in tbody tr:nth-child(2) .verdict{transition-delay:600ms}
+.js-motion table.seq.is-in tbody tr:nth-child(3) .verdict{transition-delay:680ms}
+.js-motion table.seq.is-in tbody tr:nth-child(4) .verdict{transition-delay:760ms}
+.js-motion table.seq.is-in tbody tr:nth-child(n+5) .verdict{transition-delay:840ms}
+
+/* 5 · Títulos entrando linha a linha */
+.js-motion .lines-wait{opacity:0}
+.line{display:block;overflow:hidden;padding-bottom:.14em;margin-bottom:-.14em}
+.line-inner{display:inline-block;transform:translateY(105%);animation:line-rise .9s var(--ease) forwards}
+@keyframes line-rise{to{transform:none}}
+
+/* 6 · Header compacto ao rolar */
+header{transition:height .3s var(--ease),min-height .3s var(--ease),background-color .35s var(--ease),border-color .35s var(--ease)}
+.logo{transition:font-size .3s var(--ease)}
+@media(min-width:1101px){
+  header.is-compact{height:60px}
+  header.is-compact .logo{font-size:22px}
+  header.is-compact nav .btn{min-height:40px;padding-block:8px}
+}
+nav .btn{transition:min-height .3s var(--ease),padding .3s var(--ease),background .2s}
+
+/* 7 · Setas que respondem ao hover */
+.text-link::after{content:'→';display:inline-block;margin-left:.3em;transition:transform .25s var(--ease)}
+.text-link:hover::after,.text-link:focus-visible::after{transform:translateX(4px)}
+a.text-link[download]::after,a.text-link[href$=".pdf"]::after,a.text-link[href$=".zip"]::after{content:'↓'}
+a.text-link[download]:hover::after,a.text-link[href$=".pdf"]:hover::after,a.text-link[href$=".zip"]:hover::after{transform:translateY(3px)}
+.text-link.back::after{content:none}
+.text-link.back::before{display:inline-block;transition:transform .25s var(--ease)}
+.text-link.back:hover::before{transform:translateX(-4px)}
+.resource-list a>span:first-child::after{content:'→';display:inline-block;margin-left:.35em;transition:transform .25s var(--ease)}
+.resource-list a[download]>span:first-child::after{content:'↓'}
+.resource-list a:hover>span:first-child::after,.resource-list a:focus-visible>span:first-child::after{transform:translateX(5px)}
+.resource-list a[download]:hover>span:first-child::after,.resource-list a[download]:focus-visible>span:first-child::after{transform:translateY(4px)}
+
+@media(prefers-reduced-motion:reduce){
+  .scrolly-img{transform:none}
+  .line-inner{animation:none;transform:none}
+  .scrolly-steps::after{clip-path:inset(0 0 calc(100% - var(--p) * 100%) 0)}
+}
