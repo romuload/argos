@@ -1,0 +1,122 @@
+{
+  "http": [
+    {
+      "url": "http://localhost:8917/argus-ai/",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:8917/argus-ai/plataforma/",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:8917/argus-ai/produtos/",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:8917/argus-ai/projetos/",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:8917/argus-ai/codesenvolvimento/",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:8917/argus-ai/recursos/",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:8917/argus-ai/quem-somos/",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:8917/argus-ai/contato/",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:8917/argus-ai/capacidades/",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:8917/argus-ai/relatorio-demonstrativo/",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:8917/argus-ai/produtos/aso-leishmaniose/",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:8917/argus-ai/produtos/vacina-peptideos/",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:8917/argus-ai/produtos/formulacao-chagas/",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:8917/argus-ai/produtos/testes-rapidos/",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:8917/argus-ai/areas-de-atuacao/",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:8917/argus-ai/ciencia/",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:8917/argus-ai/imprensa/",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:8917/argus-ai/downloads/argosai-apresentacao-institucional.pdf",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:8917/argus-ai/privacidade/",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:8917/argus-ai/contato/?interesse=projeto",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:8917/argus-ai/contato/?interesse=codesenvolvimento",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:8917/argus-ai/contato/?interesse=equipe",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:8917/argus-ai/downloads/argosai-relatorio-publico.pdf",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:8917/argus-ai/downloads/imprensa/argosai-kit-imprensa.zip",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:8917/argus-ai/downloads/imprensa/sobre-argosai.txt",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:8917/argus-ai/downloads/imprensa/biografia-pedro.txt",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:8917/argus-ai/downloads/imprensa/argosai-assinatura.svg",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:8917/argus-ai/downloads/imprensa/argosai-simbolo.svg",
+      "status": 200
+    }
+  ],
+  "sticky": {
+    "position": "sticky",
+    "top": 108
+  },
+  "revealsComplete": true,
+  "fileUrl": true
+}

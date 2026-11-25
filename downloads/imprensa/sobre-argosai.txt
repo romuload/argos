@@ -1,0 +1,17 @@
+ARGOSAI — DESCRIÇÃO INSTITUCIONAL
+Edição: 24 de novembro de 2026
+
+DESCRIÇÃO CURTA
+A ArgosAI desenvolve uma plataforma computacional para integrar evidências e apoiar decisões em pesquisa biomolecular. Atua em projetos sob demanda e explora oportunidades de codesenvolvimento em programas de pesquisa terapêutica, vacinas, formulações e diagnóstico.
+
+DESCRIÇÃO AMPLIADA
+A ArgosAI nasceu de uma experiência pessoal: a perda de Marley, cão do nosso CEO Pedro, para a leishmaniose visceral canina. O projeto aproxima desenvolvimento de software e bioinformática para investigar como selecionar candidatos que merecem seguir para avaliação experimental.
+
+Seu portfólio em desenvolvimento reúne uma abordagem terapêutica antissenso (ASO) para leishmaniose, uma candidata a vacina de peptídeos para leishmaniose, uma formulação para doença de Chagas e um protótipo de testes rápidos para erliquiose e babesiose.
+
+A proposta é combinar critérios explícitos, evidências e limitações para orientar decisões de pesquisa. Os programas ainda não estão disponíveis para uso clínico ou comercialização. Desenvolvimento computacional não constitui comprovação de eficácia ou segurança.
+
+O nome ArgosAI é inspirado em Argos, cão de Odisseu. A motivação do projeto permanece ligada à história de Marley.
+
+CONTATO
+Canal de recebimento em preparação.

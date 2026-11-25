@@ -1,0 +1,65 @@
+[
+  {
+    "url": "https://argosai.bio/downloads/argosai-apresentacao-institucional.pdf",
+    "response": "000 ",
+    "error": "curl: (6) Could not resolve host: argosai.bio\n",
+    "file": "work/argosai/argosai-apresentacao-institucional.pdf",
+    "bytes": 0
+  },
+  {
+    "url": "https://argosai.bio/downloads/argosai-relatorio-publico.pdf",
+    "response": "000 ",
+    "error": "curl: (6) Could not resolve host: argosai.bio\n",
+    "file": "work/argosai/argosai-relatorio-publico.pdf",
+    "bytes": 0
+  },
+  {
+    "url": "https://argosai.bio/downloads/imprensa/argosai-assinatura.svg",
+    "response": "000 ",
+    "error": "curl: (6) Could not resolve host: argosai.bio\n",
+    "file": "work/argosai/argosai-assinatura.svg",
+    "bytes": 0
+  },
+  {
+    "url": "https://argosai.bio/downloads/imprensa/argosai-kit-imprensa.zip",
+    "response": "000 ",
+    "error": "curl: (6) Could not resolve host: argosai.bio\n",
+    "file": "work/argosai/argosai-kit-imprensa.zip",
+    "bytes": 0
+  },
+  {
+    "url": "https://argosai.bio/downloads/imprensa/argosai-simbolo.svg",
+    "response": "000 ",
+    "error": "curl: (6) Could not resolve host: argosai.bio\n",
+    "file": "work/argosai/argosai-simbolo.svg",
+    "bytes": 0
+  },
+  {
+    "url": "https://argosai.bio/downloads/imprensa/biografia-pedro.txt",
+    "response": "000 ",
+    "error": "curl: (6) Could not resolve host: argosai.bio\n",
+    "file": "work/argosai/biografia-pedro.txt",
+    "bytes": 0
+  },
+  {
+    "url": "https://argosai.bio/downloads/imprensa/sobre-argosai.txt",
+    "response": "000 ",
+    "error": "curl: (6) Could not resolve host: argosai.bio\n",
+    "file": "work/argosai/sobre-argosai.txt",
+    "bytes": 0
+  },
+  {
+    "url": "https://argosai.bio/robots.txt",
+    "response": "000 ",
+    "error": "curl: (6) Could not resolve host: argosai.bio\n",
+    "file": "work/argosai/robots.txt",
+    "bytes": 0
+  },
+  {
+    "url": "https://argosai.bio/sitemap.xml",
+    "response": "000 ",
+    "error": "curl: (6) Could not resolve host: argosai.bio\n",
+    "file": "work/argosai/sitemap.xml",
+    "bytes": 0
+  }
+]

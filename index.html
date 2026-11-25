@@ -1,55 +1,221 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#f5f6f4">
-<meta name="description" content="ArgosAI — Pesquisa biomolecular orientada por evidências. Proposta de redesign.">
-<title>ArgosAI — Pesquisa biomolecular orientada por evidências</title>
-<style>
-:root{--ink:#202726;--teal:#233e42;--muted:#52635f;--off:#f5f6f4;--mist:#e7ebef}
-*,*::before,*::after{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:white;color:var(--ink);line-height:1.5}a{color:inherit;text-decoration:none}button,a{ -webkit-tap-highlight-color:transparent}a:focus-visible{outline:3px solid #6c999b;outline-offset:5px}canvas{display:block;width:100%;height:100%}
-header{height:85px;display:flex;align-items:center;justify-content:space-between;padding:0 6%;position:sticky;top:0;z-index:30;background:#ffffffed;backdrop-filter:blur(18px);border-bottom:1px solid #e9ece8}
-.logo{font-weight:700;font-size:29px;letter-spacing:-2px}.logo span{color:#5d8588}
-nav{display:flex;gap:27px;align-items:center;font-size:13px}
-.btn{display:inline-block;padding:14px 24px;border-radius:40px;background:var(--teal);color:#fff;font-size:13px;font-weight:500;transition:transform .2s,background .2s}.btn:hover{background:#355c60;transform:translateY(-2px)}.btn.outline{background:transparent;color:var(--teal);border:1px solid var(--teal)}.btn.outline:hover{background:#ecf2f1}
-section{padding:110px 7%;scroll-margin-top:85px}h1,h2,h3{font-weight:400;letter-spacing:-.055em;line-height:1.08;margin:18px 0}h1{font-size:clamp(44px,6.5vw,104px)}h2{font-size:clamp(38px,5vw,76px)}h3{font-size:clamp(33px,3.6vw,54px)}em{font-family:Georgia,'Times New Roman',serif;font-weight:400;color:#42666b}p{color:var(--muted);font-size:16px;max-width:490px;line-height:1.7}.eyebrow{color:var(--muted);font-size:11px;font-weight:bold;letter-spacing:2px;text-transform:uppercase}
-.hero{display:grid;grid-template-columns:1.06fr .94fr;align-items:center;min-height:calc(100svh - 85px);background:var(--off);overflow:hidden}.hero .hero-art{height:550px;position:relative}.hero p{margin:25px 0 34px}.scrollhint{font-size:12px;color:#758681;margin-top:75px}
-.intro{text-align:center;max-width:780px;margin:0 auto 75px}.intro p{margin:auto}
-.stack{position:relative;padding-bottom:100px}.feature{position:sticky;display:grid;grid-template-columns:1fr 1fr;min-height:420px;align-items:center;gap:4%;padding:54px;border:1px solid #ffffffa0;border-radius:10px;box-shadow:0 -4px 35px #233e420b;margin-bottom:105px;top:108px}.feature:nth-child(2){top:142px}.feature:nth-child(3){top:176px;margin-bottom:0}.feature-art{height:340px}.feature p{max-width:430px}
-.science{background:#eef0f3}.pair{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:10%;min-height:465px}.pair-art{height:390px}.pair p{max-width:450px}
-.platform{display:grid;grid-template-columns:1.05fr .95fr;gap:9%;align-items:center;min-height:650px}.mock{background:white;border:1px solid #dce3e2;border-radius:12px;box-shadow:0 20px 65px #1e37341a;overflow:hidden}.mockbar{padding:18px;border-bottom:1px solid #e4e8e6;font-size:12px;display:flex;justify-content:space-between}.mockbody{display:grid;grid-template-columns:118px 1fr;min-height:320px}.sidebar{background:#f4f6f5;padding:20px 12px;color:#63756e;font-size:11px;line-height:3.5}.mockmain{padding:22px}.mockmain p{font-size:11px;margin:4px 0 10px}.mockart{height:230px;background:#f7f8fa;border-radius:7px}
-footer{background:var(--mist);padding:65px 7% 28px}.footgrid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:35px;font-size:13px}.footgrid a{display:block;color:var(--muted);margin:15px 0}.footgrid p{font-size:14px}.copy{border-top:1px solid #cdd5d5;margin-top:55px;padding-top:20px;font-size:11px;color:var(--muted)}
-.reveal{transition:opacity .75s ease,transform .75s ease}.reveal.waiting{opacity:0;transform:translateY(27px)}
-@media(max-width:850px){nav{gap:12px}nav>a:not(.btn){display:none}section{padding:72px 6%}.hero{grid-template-columns:1fr;min-height:unset;padding-top:90px}.hero .hero-art{height:390px}.scrollhint{margin-top:36px}.feature{padding:34px;min-height:350px}.feature-art{height:250px}.pair{min-height:355px}.pair-art{height:295px}.platform{gap:5%}}
-@media(max-width:600px){header{height:70px;padding:0 5%}header .logo{font-size:26px}nav .btn{padding:10px 13px;font-size:11px}.hero{padding-top:65px}.hero .hero-art{height:300px}section{padding:65px 6%;scroll-margin-top:70px}.intro{margin-bottom:45px}h1{font-size:clamp(45px,12vw,65px)}h2{font-size:clamp(36px,9vw,54px)}h3{font-size:clamp(31px,8vw,47px)}.stack{padding-bottom:50px}.feature{grid-template-columns:1fr;padding:25px;min-height:430px;margin-bottom:55px;top:80px}.feature:nth-child(2){top:105px}.feature:nth-child(3){top:130px}.feature-art{height:205px}.feature p{font-size:14px}.pair,.platform{grid-template-columns:1fr;gap:8px;min-height:0}.pair{padding-bottom:48px}.pair-art{height:265px}.pair:nth-child(3) .pair-art{order:2}.platform{gap:45px}.footgrid{grid-template-columns:1fr 1fr}.footgrid>div:first-child{grid-column:span 2}.mockbody{grid-template-columns:75px 1fr}.sidebar{padding:12px 7px;font-size:9px}.mockmain{padding:12px}.mockart{height:190px}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{transition:none!important}.reveal.waiting{opacity:1;transform:none}}
-.tiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}.tile{padding:32px;background:#f5f6f4;border-radius:10px}.tile h3{font-size:clamp(27px,3vw,42px)}.tile-art{height:255px;background:#e7ebef;border-radius:8px;margin-bottom:24px}.tile>a:not(.btn){font-weight:600;color:#233e42}.note{max-width:none;font-size:13px}.resources{max-width:900px;margin:auto}.resources a{display:flex;justify-content:space-between;padding:22px 0;border-bottom:1px solid #ccd5d4}.footgrid{grid-template-columns:2fr 1fr 1fr 1fr}nav{gap:18px}.hero .btn{margin-bottom:8px}@media(max-width:1000px){nav>a:not(.btn){display:none}}@media(max-width:600px){.tiles{grid-template-columns:1fr}.tile{padding:22px}.tile-art{height:200px}.footgrid{grid-template-columns:1fr 1fr}.pair{display:flex;flex-direction:column}.pair>div{width:100%}.pair-art{order:2}}</style>
-</head>
-<body><header><a class="logo" href="#home">argos<span>ai.</span></a><nav aria-label="Navegação principal"><a href="#technology">Plataforma</a><a href="#produtos">Produtos</a><a href="#projetos">Projetos</a><a href="#parcerias">Parcerias</a><a href="#recursos">Recursos</a><a href="#about">Quem somos</a><a class="btn outline" href="https://argosai.bio/contato/">Vamos conversar ↗</a></nav></header>
-<main><section id="home" class="hero"><div><div class="eyebrow">Pesquisa biomolecular</div><h1>Reconhecer o que merece <em>avançar.</em></h1><p>Evidências computacionais para orientar a próxima decisão em pesquisa biomolecular.</p><a class="btn" href="#projetos">Tenho um projeto ↗</a> <a class="btn outline" href="#parcerias">Quero codesenvolver ↗</a><div class="scrollhint">↓ &nbsp; Explore nossa abordagem</div></div><div class="hero-art"><canvas data-art="ribbon" data-tone="blue" role="img" aria-label="Ilustração molecular conceitual"></canvas></div></section>
-<section><div class="intro reveal"><div class="eyebrow">Nossa abordagem</div><h2>Por que trabalhar com a <em>ArgosAI?</em></h2><p>Uma abordagem organizada em torno da decisão que sua equipe precisa tomar.</p></div><div class="stack"><article class="feature" style="background:#e6eff2"><div><div class="eyebrow">01 / Critérios</div><h3>Critérios que podem ser examinados.</h3><p>Discutimos premissas, fontes e critérios de seleção para que a priorização tenha uma justificativa compreensível.</p></div><div class="feature-art"><canvas data-art="network" data-tone="blue" role="img" aria-label="Ilustração científica conceitual"></canvas></div></article><article class="feature" style="background:#ece9f3"><div><div class="eyebrow">02 / Evidências</div><h3>Evidências vistas em conjunto.</h3><p>Integramos sinais relevantes ao contexto do projeto, preservando as limitações de cada análise e as incertezas da conclusão.</p></div><div class="feature-art"><canvas data-art="ribbon" data-tone="lilac" role="img" aria-label="Ilustração científica conceitual"></canvas></div></article><article class="feature" style="background:#e7eee6"><div><div class="eyebrow">03 / Entregáveis</div><h3>Entregas definidas com você.</h3><p>A pergunta, os dados disponíveis e a decisão esperada orientam a construção do escopo e dos entregáveis.</p></div><div class="feature-art"><canvas data-art="atoms" data-tone="sage" role="img" aria-label="Ilustração científica conceitual"></canvas></div></article></div></section>
-<section id="produtos"><div class="intro reveal"><h2>Conheça nossos produtos em <em>desenvolvimento.</em></h2><p>Da pesquisa terapêutica ao diagnóstico veterinário, quatro frentes para avançar com evidências.</p></div><div class="tiles"><article class="tile reveal"><div class="tile-art"><canvas data-art="ribbon" data-tone="blue" role="img" aria-label="Ilustração conceitual, não representação do produto"></canvas></div><div class="eyebrow">Pesquisa terapêutica · Desenvolvimento computacional</div><h3>ASO para leishmaniose</h3><p>Abordagem com oligonucleotídeos antissenso voltada à investigação de alvos de Leishmania.</p><a href="https://argosai.bio/produtos/aso-leishmaniose/">Conhecer o programa ↗</a></article><article class="tile reveal"><div class="tile-art"><canvas data-art="atoms" data-tone="lilac" role="img" aria-label="Ilustração conceitual, não representação do produto"></canvas></div><div class="eyebrow">Pesquisa em vacinas · Candidata em desenvolvimento</div><h3>Vacina de peptídeos para leishmaniose</h3><p>Seleção e priorização computacional de candidatos para investigação da resposta imune contra Leishmania.</p><a href="https://argosai.bio/produtos/vacina-peptideos/">Conhecer o programa ↗</a></article><article class="tile reveal"><div class="tile-art"><canvas data-art="surface" data-tone="sage" role="img" aria-label="Ilustração conceitual, não representação do produto"></canvas></div><div class="eyebrow">Pesquisa em formulações · Em desenvolvimento</div><h3>Formulação para doença de Chagas</h3><p>Frente dedicada ao desenvolvimento de uma formulação para investigação na doença de Chagas.</p><a href="https://argosai.bio/produtos/formulacao-chagas/">Conhecer o programa ↗</a></article><article class="tile reveal"><div class="tile-art"><canvas data-art="network" data-tone="blue" role="img" aria-label="Ilustração conceitual, não representação do produto"></canvas></div><div class="eyebrow">Diagnóstico veterinário · Protótipo</div><h3>Testes rápidos para erliquiose e babesiose</h3><p>Protótipo que conecta pesquisa biomolecular às necessidades do diagnóstico veterinário.</p><a href="https://argosai.bio/produtos/testes-rapidos/">Conhecer o programa ↗</a></article></div><p class="note">Programas em desenvolvimento, ainda sem disponibilidade para uso clínico ou comercialização.</p></section>
-<section class="science" id="technology"><div class="intro reveal"><div class="eyebrow">Plataforma</div><h2>Da evidência à <em>decisão experimental.</em></h2><p>Uma abordagem integrada para comparar candidatos biomoleculares e tornar os critérios de priorização visíveis.</p></div><div class="pair reveal"><div class="pair-art"><canvas data-art="network" data-tone="blue" role="img" aria-label="Ilustração científica conceitual"></canvas></div><div><div class="eyebrow">01 — Dados</div><h3>Definir a pergunta científica.</h3><p>Definimos o contexto biológico e os dados adequados ao escopo. Registramos as fontes e suas limitações.</p></div></div><div class="pair reveal"><div><div class="eyebrow">02 — Análise</div><h3>Uma leitura conjunta do problema.</h3><p>Aplicamos análises computacionais de sequência, conservação, estrutura e imunologia.</p></div><div class="pair-art"><canvas data-art="ribbon" data-tone="lilac" role="img" aria-label="Ilustração científica conceitual"></canvas></div></div><div class="pair reveal"><div class="pair-art"><canvas data-art="atoms" data-tone="sage" role="img" aria-label="Ilustração científica conceitual"></canvas></div><div><div class="eyebrow">03 — Priorização</div><h3>Reconhecer os candidatos.</h3><p>Comparamos candidatos com critérios explícitos e organizamos as evidências para orientar a escolha do que investigar.</p></div></div><div class="pair reveal"><div><div class="eyebrow">04 — Validação experimental</div><h3>Dos dados ao experimento.</h3><p>Planejamos como testar as hipóteses. A validação experimental permanece pendente nos programas apresentados.</p></div><div class="pair-art"><canvas data-art="surface" data-tone="blue" role="img" aria-label="Ilustração científica conceitual"></canvas></div></div><a class="btn outline" href="https://argosai.bio/plataforma/">Entenda nossa abordagem ↗</a></section>
-<section id="research" class="platform reveal"><div class="mock"><div class="mockbar"><strong>ArgosAI</strong><span>Relatório demonstrativo · Conceito visual</span></div><div class="mockmain"><div class="eyebrow">Evidências computacionais</div><h3 style="font-size:28px">Priorização de antígenos</h3><div class="mockart"><canvas data-art="ribbon" data-tone="blue" role="img" aria-label="Ilustração molecular sem dados experimentais"></canvas></div><p>Ilustração editorial — não representa resultados medidos.</p></div></div><div><div class="eyebrow">Ciência e resultados</div><h2>Ciência que pode ser <em>examinada.</em></h2><p>A proposta é apoiar a seleção de candidatos. A comprovação de eficácia depende da pesquisa experimental.</p><strong>Aplicação inicial</strong><p>Priorização de antígenos para pesquisa em vacinas contra leishmaniose.</p><strong>Estágio atual</strong><p>Protótipo computacional. Validação experimental e benchmarks comparativos ainda pendentes.</p><a class="btn" href="https://argosai.bio/relatorio-demonstrativo/">Acessar relatório demonstrativo ↗</a></div></section>
-<section id="projetos" class="science"><div class="intro reveal"><h2>O próximo passo pode ser <em>conjunto.</em></h2><p>Duas formas de conectar nossa abordagem à sua pesquisa.</p></div><div class="tiles"><article class="tile reveal"><h3>Projetos sob demanda</h3><p>Uma pergunta definida, uma análise direcionada e entregáveis construídos para a decisão da sua equipe.</p><a class="btn" href="https://argosai.bio/projetos/">Conhecer os projetos ↗</a></article><article id="parcerias" class="tile reveal"><h3>Codesenvolvimento</h3><p>Capacidades complementares para investigar candidatos e desenvolver programas de pesquisa terapêutica, vacinas, formulações e diagnóstico.</p><a class="btn" href="https://argosai.bio/codesenvolvimento/">Explorar a colaboração ↗</a></article></div></section>
-<section id="about" class="platform reveal"><div><div class="eyebrow">Nossa origem</div><h2>Tudo começou com <em>Marley.</em></h2><p>Uma experiência pessoal com a leishmaniose se transformou em uma pergunta de pesquisa.</p><p>Nosso CEO Pedro deu início ao projeto após a perda de seu cão Marley. Hoje, essa iniciativa ganha uma nova identidade: ArgosAI.</p><a class="btn" href="https://argosai.bio/quem-somos/">Conheça a nossa história ↗</a></div><div class="pair-art"><canvas data-art="atoms" data-tone="sage" role="img" aria-label="Ilustração molecular abstrata"></canvas></div></section>
-<section id="recursos" class="science"><div class="intro reveal"><h2>Conheça a ciência. <em>Compartilhe a visão.</em></h2><p>Explore as evidências disponíveis e leve uma apresentação da ArgosAI para a próxima conversa com sua equipe.</p></div><div class="resources"><a href="https://argosai.bio/ciencia/">Ciência e resultados <span>↗</span></a><a href="https://argosai.bio/recursos/">Novidades e materiais <span>↗</span></a><a href="https://argosai.bio/imprensa/">Kit de imprensa <span>↗</span></a><a href="https://argosai.bio/downloads/argosai-apresentacao-institucional.pdf">Baixar apresentação institucional (PDF) <span>↗</span></a></div></section></main>
-<footer><div class="footgrid"><div><div class="logo">argos<span>ai.</span></div><p>Pesquisa biomolecular.<br>Decisões orientadas por evidências.</p></div><div><strong>Pesquisa</strong><a href="https://argosai.bio/plataforma/">Plataforma</a><a href="https://argosai.bio/produtos/">Produtos</a><a href="https://argosai.bio/capacidades/">Capacidades</a><a href="https://argosai.bio/ciencia/">Ciência e resultados</a></div><div><strong>Colaboração</strong><a href="https://argosai.bio/projetos/">Projetos</a><a href="https://argosai.bio/codesenvolvimento/">Parcerias</a><a href="https://argosai.bio/contato/">Contato</a></div><div><strong>Institucional</strong><a href="https://argosai.bio/quem-somos/">Quem somos</a><a href="https://argosai.bio/quem-somos/#equipe">Equipe</a><a href="https://argosai.bio/recursos/">Recursos</a><a href="https://argosai.bio/imprensa/">Imprensa</a><a href="https://argosai.bio/privacidade/">Privacidade</a></div></div><div class="copy">ArgosAI · Plataforma em desenvolvimento.<br>Resultados computacionais; validação experimental pendente.<br>Proposta de redesign — ilustrações conceituais.</div></footer><script>
-(()=>{
-function draw(cv){
-const w=cv.clientWidth,h=cv.clientHeight;if(!w||!h)return;const d=Math.min(window.devicePixelRatio||1,2);cv.width=Math.round(w*d);cv.height=Math.round(h*d);const c=cv.getContext('2d');c.scale(d,d);
-const palette=cv.dataset.tone==='lilac'?['#69638f','#b9b2d7','#f5f0ff']:cv.dataset.tone==='sage'?['#507e6f','#a4c6b4','#eff9e9']:['#467b91','#9bc8d9','#eafaff'];
-const s=Math.min(w,h)/300;let pts=[];
-for(let i=0;i<260;i++){let t=i/259*Math.PI*8,r=77+24*Math.sin(t*1.7);pts.push({x:w/2+(r*Math.cos(t)+24*Math.sin(t*.64))*s,y:h/2+(65*Math.sin(t*.73)+35*Math.cos(t*1.2))*s*1.25,z:r*Math.sin(t)});}
-if(cv.dataset.art==='network'){pts=[];for(let i=0;i<85;i++){const a=i*2.39996,r=100*Math.sqrt(i/85);pts.push({x:w/2+Math.cos(a)*r*s*1.22,y:h/2+Math.sin(a)*r*s*.85,z:30*Math.sin(i)});}}
-c.save();c.translate(w/2,h*.84);c.scale(1,.23);const sh=c.createRadialGradient(0,0,0,0,0,110*s);sh.addColorStop(0,'#395e6024');sh.addColorStop(1,'#395e6000');c.fillStyle=sh;c.beginPath();c.arc(0,0,110*s,0,Math.PI*2);c.fill();c.restore();
-const ball=(p,r)=>{const g=c.createRadialGradient(p.x-r*.35,p.y-r*.4,r*.06,p.x,p.y,r);g.addColorStop(0,palette[2]);g.addColorStop(.35,palette[1]);g.addColorStop(1,palette[0]);c.fillStyle=g;c.beginPath();c.arc(p.x,p.y,r,0,Math.PI*2);c.fill()};
-if(cv.dataset.art==='ribbon'){for(let j=0;j<4;j++){c.beginPath();pts.forEach((p,i)=>{let x=p.x+Math.sin(i*.12+j)*9*s,y=p.y+j*2*s;i?c.lineTo(x,y):c.moveTo(x,y)});c.lineJoin='round';c.lineCap='round';c.strokeStyle=[palette[0],palette[1],palette[2],palette[1]][j];c.lineWidth=[18,14,5,3][j]*s;c.stroke();}}
-else{if(cv.dataset.art==='network'){c.strokeStyle=palette[1];c.lineWidth=1.5*s;for(let i=0;i<pts.length;i++)for(let j=i+1;j<pts.length;j++){const p=pts[i],q=pts[j];if(Math.hypot(p.x-q.x,p.y-q.y)<34*s){c.beginPath();c.moveTo(p.x,p.y);c.lineTo(q.x,q.y);c.stroke();}}}let step=cv.dataset.art==='network'?1:3;pts.filter((_,i)=>i%step===0).sort((a,b)=>a.z-b.z).forEach((p,i)=>ball(p,(cv.dataset.art==='surface'?15:cv.dataset.art==='network'?4+i%4:6+i%5)*s*(1+p.z/450)));}
-}
-const cvs=document.querySelectorAll('canvas');cvs.forEach(draw);
-if('ResizeObserver'in window){const ro=new ResizeObserver(entries=>entries.forEach(e=>draw(e.target)));cvs.forEach(cv=>ro.observe(cv));}
-if('IntersectionObserver'in window&&!matchMedia('(prefers-reduced-motion: reduce)').matches){const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.remove('waiting');io.unobserve(e.target)}}),{threshold:.08});document.querySelectorAll('.reveal').forEach(el=>{el.classList.add('waiting');io.observe(el)});}
-})();
+<meta name="description" content="Pesquisa biomolecular orientada por evidências | ArgosAI — Pesquisa biomolecular orientada por evidências.">
+<title>Pesquisa biomolecular orientada por evidências | ArgosAI</title>
+<link rel="icon" href="downloads/imprensa/argosai-simbolo.svg">
+<link rel="stylesheet" href="assets/site.css">
+<script defer src="assets/site.js">
 </script>
-</body></html>
+</head>
+<body class="home">
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+<header>
+<a class="logo" href="./" aria-label="ArgosAI — início">argos<span>ai.</span>
+</a>
+<button class="menu-toggle" aria-expanded="false" aria-controls="main-nav">Menu</button>
+<nav id="main-nav" aria-label="Navegação principal">
+<a href="plataforma/">Plataforma</a>
+<a href="produtos/">Produtos</a>
+<a href="projetos/">Projetos</a>
+<a href="codesenvolvimento/">Parcerias</a>
+<a href="recursos/">Recursos</a>
+<a href="quem-somos/">Quem somos</a>
+<a class="btn outline" href="contato/">Vamos conversar ↗</a>
+</nav>
+</header>
+<main id="conteudo" tabindex="-1">
+<div class="page-content">
+<section aria-labelledby="home-title" class="hero dark-section reveal">
+<div class="hero-content">
+<h1 id="home-title">Reconhecer o que merece <em>avançar.</em>
+</h1>
+<p>Evidências computacionais para orientar a próxima decisão em pesquisa biomolecular.</p>
+<div class="hero-actions">
+<a data-testid="hero-projects" href="projetos/" class=" btn">Tenho um projeto</a>
+<a data-testid="hero-codevelopment" href="codesenvolvimento/" class=" btn">Quero codesenvolver</a>
+</div>
+</div>
+<img class="hero-art molecule" src="assets/molecules/ribbon-blue.png" alt="Ilustração molecular conceitual" width="900" height="720" loading="lazy">
+</section>
+<section aria-labelledby="why-argos-title" class="section reveal">
+<div class="section-heading">
+<h2 id="why-argos-title">Por que trabalhar com a ArgosAI?</h2>
+<p>Uma abordagem organizada em torno da decisão que sua equipe precisa tomar.</p>
+</div>
+<div class="stack">
+<article data-tone="blue" class="feature">
+<div>
+<h3>Critérios que podem ser examinados</h3>
+<p>Discutimos premissas, fontes e critérios de seleção para que a priorização tenha uma justificativa compreensível.</p>
+</div>
+<div class="feature-art">
+<img src="assets/molecules/network-blue.png" alt="Ilustração científica conceitual" loading="lazy">
+</div>
+</article>
+<article data-tone="lilac" class="feature">
+<div>
+<h3>Evidências vistas em conjunto</h3>
+<p>Integramos sinais relevantes ao contexto do projeto, preservando as limitações de cada análise e as incertezas da conclusão.</p>
+</div>
+<div class="feature-art">
+<img src="assets/molecules/ribbon-lilac.png" alt="Ilustração científica conceitual" loading="lazy">
+</div>
+</article>
+<article data-tone="sage" class="feature">
+<div>
+<h3>Entregas definidas com você</h3>
+<p>A pergunta, os dados disponíveis e a decisão esperada orientam a construção do escopo e dos entregáveis.</p>
+</div>
+<div class="feature-art">
+<img src="assets/molecules/atoms-sage.png" alt="Ilustração científica conceitual" loading="lazy">
+</div>
+</article>
+</div>
+<div class="cta-band">
+<a data-testid="why-capabilities" href="capacidades/" class=" text-link">Conheça nossas capacidades</a>
+<a data-testid="why-demo" href="relatorio-demonstrativo/" class=" text-link">Veja um relatório com resultados reais</a>
+</div>
+</section>
+<section aria-labelledby="home-products-title" class="section reveal">
+<div class="section-heading">
+<h2 id="home-products-title">Conheça nossos produtos em desenvolvimento.</h2>
+<p>Da pesquisa terapêutica ao diagnóstico veterinário, quatro frentes para avançar com evidências.</p>
+<p>Programas em desenvolvimento, ainda sem disponibilidade para uso clínico ou comercialização.</p>
+</div>
+<div class="pathways">
+<article class="pathway text-stack">
+<img src="assets/molecules/ribbon-blue.png" alt="Ilustração molecular conceitual" loading="lazy" class="product-art">
+<p>Pesquisa terapêutica · Desenvolvimento computacional</p>
+<h3>ASO para leishmaniose</h3>
+<p>Abordagem com oligonucleotídeos antissenso voltada à investigação de alvos de Leishmania. O programa explora candidatos terapêuticos e sua progressão para avaliação experimental.</p>
+<a href="produtos/aso-leishmaniose/" class=" text-link">Conhecer: ASO para leishmaniose</a>
+</article>
+<article class="pathway text-stack">
+<img src="assets/molecules/atoms-lilac.png" alt="Ilustração molecular conceitual" loading="lazy" class="product-art">
+<p>Pesquisa em vacinas · Candidata em desenvolvimento</p>
+<h3>Vacina de peptídeos para leishmaniose</h3>
+<p>Programa de vacina baseada em peptídeos, com seleção e priorização computacional de candidatos para investigação da resposta imune contra Leishmania.</p>
+<a href="produtos/vacina-peptideos/" class=" text-link">Conhecer: Vacina de peptídeos para leishmaniose</a>
+</article>
+<article class="pathway text-stack">
+<img src="assets/molecules/surface-sage.png" alt="Ilustração molecular conceitual" loading="lazy" class="product-art">
+<p>Pesquisa em formulações · Em desenvolvimento</p>
+<h3>Formulação para doença de Chagas</h3>
+<p>Frente dedicada ao desenvolvimento de uma formulação para investigação na doença de Chagas, ampliando o portfólio de pesquisa para Trypanosoma cruzi.</p>
+<a href="produtos/formulacao-chagas/" class=" text-link">Conhecer: Formulação para doença de Chagas</a>
+</article>
+<article class="pathway text-stack">
+<img src="assets/molecules/network-blue.png" alt="Ilustração molecular conceitual" loading="lazy" class="product-art">
+<p>Diagnóstico veterinário · Protótipo</p>
+<h3>Testes rápidos para erliquiose e babesiose</h3>
+<p>Protótipo voltado ao desenvolvimento de testes rápidos para erliquiose e babesiose, conectando pesquisa biomolecular às necessidades do diagnóstico veterinário.</p>
+<a href="produtos/testes-rapidos/" class=" text-link">Conhecer: Testes rápidos para erliquiose e babesiose</a>
+</article>
+</div>
+</section>
+<section aria-labelledby="home-method-title" class="section split reveal">
+<h2 id="home-method-title">Antes do próximo experimento, uma escolha.</h2>
+<div class="text-stack">
+<p>Entre muitos candidatos, quais merecem a atenção da sua equipe?</p>
+<p>A ArgosAI integra análises de sequência, conservação, estrutura e imunologia para apoiar essa escolha. Cada priorização deve vir acompanhada de critérios, evidências e limitações.</p>
+<a data-testid="home-platform" href="plataforma/" class=" text-link">Entenda nossa abordagem</a>
+</div>
+</section>
+<section aria-labelledby="research-links-title" class="section cta-band reveal">
+<h2 id="research-links-title">Explore a abordagem.</h2>
+<p>Conheça as aplicações, entenda o trabalho proposto e visualize uma possível entrega.</p>
+<a data-testid="research-areas" href="areas-de-atuacao/" class=" text-link">Áreas de atuação</a>
+<a data-testid="research-capabilities" href="capacidades/" class=" text-link">Capacidades de pesquisa</a>
+<a data-testid="research-demo" href="relatorio-demonstrativo/" class=" text-link">Relatório demonstrativo</a>
+</section>
+<section aria-labelledby="collaboration-title" class="section dark-section reveal">
+<div class="section-heading">
+<h2 id="collaboration-title">O próximo passo pode ser conjunto.</h2>
+<p>Duas formas de conectar nossa abordagem à sua pesquisa.</p>
+</div>
+<div class="pathways">
+<article class="pathway">
+<h3>Projetos sob demanda</h3>
+<p>Uma pergunta definida, uma análise direcionada e entregáveis construídos para a decisão da sua equipe.</p>
+<a data-testid="explore-projects" href="projetos/" class=" text-link">Conhecer os projetos</a>
+</article>
+<article class="pathway">
+<h3>Codesenvolvimento</h3>
+<p>Capacidades complementares para investigar candidatos e desenvolver programas de pesquisa terapêutica, vacinas, formulações e diagnóstico.</p>
+<a data-testid="explore-codevelopment" href="codesenvolvimento/" class=" text-link">Explorar a colaboração</a>
+</article>
+</div>
+</section>
+<section aria-labelledby="home-science-title" class="section reveal">
+<div class="section-heading">
+<h2 id="home-science-title">Ciência que pode ser examinada.</h2>
+<p>A proposta é apoiar a seleção de candidatos. A comprovação de eficácia depende da pesquisa experimental.</p>
+</div>
+<div class="facts">
+<div class="fact">
+<h3>Aplicação inicial</h3>
+<p>Priorização de antígenos para pesquisa em vacinas contra leishmaniose.</p>
+</div>
+<div class="fact">
+<h3>Estágio atual</h3>
+<p>Protótipo computacional. Validação experimental e benchmarks comparativos ainda pendentes.</p>
+</div>
+</div>
+</section>
+<section aria-labelledby="resources-title" class="section cta-band reveal">
+<h2 id="resources-title">Conheça a ciência. Compartilhe a visão.</h2>
+<p>Explore as evidências disponíveis e leve uma apresentação da ArgosAI para a próxima conversa com sua equipe.</p>
+<a href="ciencia/" class=" text-link">Ciência e resultados</a>
+<a href="recursos/" class=" text-link">Novidades e materiais</a>
+<a href="imprensa/" class=" text-link">Kit de imprensa</a>
+<a data-testid="download-presentation" href="downloads/argosai-apresentacao-institucional.pdf" download="" class=" btn">Baixar apresentação institucional (PDF)</a>
+</section>
+<section aria-labelledby="home-story-title" class="section split reveal">
+<h2 id="home-story-title">Tudo começou com Marley.</h2>
+<div class="text-stack">
+<p>Uma experiência pessoal com a leishmaniose se transformou em uma pergunta de pesquisa.</p>
+<p>Nosso CEO Pedro deu início ao projeto após a perda de seu cão Marley. Hoje, essa iniciativa ganha uma nova identidade: ArgosAI.</p>
+<a data-testid="home-story" href="quem-somos/" class=" text-link">Conheça a nossa história</a>
+<a href="quem-somos/#equipe" class=" text-link">Conheça a equipe</a>
+<a href="quem-somos/#trabalhe-conosco" class=" text-link">Trabalhe conosco</a>
+</div>
+</section>
+</div>
+</main>
+<footer>
+<div class="footgrid">
+<div>
+<a class="logo" href="./">argos<span>ai.</span>
+</a>
+<p>Pesquisa biomolecular.<br>Decisões orientadas por evidências.</p>
+</div>
+<div>
+<a href="plataforma/">Plataforma</a>
+<a href="produtos/">Produtos</a>
+<a href="projetos/">Projetos</a>
+</div>
+<div>
+<a href="codesenvolvimento/">Parcerias</a>
+<a href="recursos/">Recursos</a>
+<a href="quem-somos/">Quem somos</a>
+<a href="ciencia/">Ciência e resultados</a>
+<a href="areas-de-atuacao/">Áreas de atuação</a>
+<a href="capacidades/">Capacidades</a>
+<a href="relatorio-demonstrativo/">Relatório demonstrativo</a>
+</div>
+<div>
+<a href="imprensa/">Imprensa</a>
+<a href="quem-somos/#equipe">Equipe</a>
+<a href="quem-somos/#trabalhe-conosco">Trabalhe conosco</a>
+<a href="contato/">Contato</a>
+<a href="privacidade/">Privacidade</a>
+</div>
+</div>
+<div class="copy">ArgosAI · Plataforma em desenvolvimento.<br>Resultados computacionais; validação experimental pendente.<br>Ilustrações moleculares conceituais.</div>
+</footer>
+</body>
+</html>

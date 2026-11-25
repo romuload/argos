@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f5f6f4">
+<meta name="description" content="Prepare seu projeto | ArgosAI — Pesquisa biomolecular orientada por evidências.">
+<title>Prepare seu projeto | ArgosAI</title>
+<link rel="icon" href="../downloads/imprensa/argosai-simbolo.svg">
+<link rel="stylesheet" href="../assets/site.css">
+<script defer src="../assets/site.js">
+</script>
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+<header>
+<a class="logo" href="../" aria-label="ArgosAI — início">argos<span>ai.</span>
+</a>
+<button class="menu-toggle" aria-expanded="false" aria-controls="main-nav">Menu</button>
+<nav id="main-nav" aria-label="Navegação principal">
+<a href="../plataforma/">Plataforma</a>
+<a href="../produtos/">Produtos</a>
+<a href="../projetos/">Projetos</a>
+<a href="../codesenvolvimento/">Parcerias</a>
+<a href="../recursos/">Recursos</a>
+<a href="../quem-somos/">Quem somos</a>
+<a class="btn outline" href="./">Vamos conversar ↗</a>
+</nav>
+</header>
+<main id="conteudo" tabindex="-1">
+<div class="page-content">
+<section class="page-intro section reveal">
+<div>
+<h1>Sua pergunta é o ponto de partida.</h1>
+<p>Vamos organizar o contexto, a necessidade e o tipo de colaboração que faz sentido para sua pesquisa.</p>
+</div>
+<img class="intro-art molecule" src="../assets/molecules/ribbon-blue.png" alt="Ilustração molecular conceitual" width="900" height="720" loading="lazy">
+</section>
+<section class="section contact-layout reveal">
+<div class="text-stack">
+<h2>Prepare a próxima conversa.</h2>
+<p>Nosso canal de contato está em preparação. Enquanto isso, você pode criar um resumo do projeto ou da sua apresentação e guardá-lo para compartilhar quando o canal estiver disponível.</p>
+<p>Para trabalhar conosco, conte sua trajetória, competências e área de interesse. Para projetos sob demanda, descreva a pergunta científica e os dados disponíveis. Para codesenvolvimento, conte o objetivo do programa e as capacidades que gostaria de complementar.</p>
+<p>As informações ficam somente nesta página e no arquivo que você baixar. Não são enviadas a servidores nem salvas pelo site. Evite incluir sequências, dados pessoais de terceiros ou conteúdo confidencial.</p>
+</div>
+<noscript>
+<p>Ative o JavaScript para preparar e baixar o resumo localmente.</p>
+</noscript>
+<form novalidate="" data-testid="contact-brief-form" class="brief-form">
+<div class="form-row">
+<div class="field">
+<label for="name">Seu nome</label>
+<input id="name" name="name" required maxlength="120" aria-describedby="name-error" data-testid="contact-name" type="text" autocomplete="name">
+<p class="field-error" id="name-error">
+</p>
+</div>
+<div class="field">
+<label for="email">E-mail profissional</label>
+<input id="email" name="email" required maxlength="254" aria-describedby="email-error" data-testid="contact-email" type="email" autocomplete="email">
+<p class="field-error" id="email-error">
+</p>
+</div>
+</div>
+<div class="field">
+<label for="organization">Organização (opcional)</label>
+<input id="organization" name="organization" maxlength="180" aria-describedby="organization-error" data-testid="contact-organization" type="text" autocomplete="organization">
+<p class="field-error" id="organization-error">
+</p>
+</div>
+<div class="field">
+<label for="interest">Como gostaria de colaborar?</label>
+<select id="interest" name="interest" required aria-describedby="interest-error" data-testid="contact-interest">
+<option value="projeto">Projeto sob demanda</option>
+<option value="codesenvolvimento">Codesenvolvimento</option>
+<option value="equipe">Trabalhe conosco</option>
+</select>
+<p class="field-error" id="interest-error">
+</p>
+</div>
+<div class="field">
+<label for="challenge">Qual é a pergunta ou o desafio da pesquisa?</label>
+<p class="field-hint" id="challenge-hint">Inclua o objetivo, o contexto e os dados disponíveis, sem informações confidenciais.</p>
+<textarea id="challenge" name="challenge" required maxlength="4000" aria-describedby="challenge-error challenge-hint" data-testid="contact-challenge" rows="6">
+</textarea>
+<p class="field-error" id="challenge-error">
+</p>
+</div>
+<button data-testid="download-brief" type="submit" disabled class=" btn">Preparar e baixar resumo</button>
+<p>Este botão gera um arquivo no seu dispositivo. Ele não envia uma solicitação à ArgosAI.</p>
+<div role="status" aria-live="polite" tabindex="-1" class="form-status">
+</div>
+</form>
+</section>
+</div>
+</main>
+<footer>
+<div class="footgrid">
+<div>
+<a class="logo" href="../">argos<span>ai.</span>
+</a>
+<p>Pesquisa biomolecular.<br>Decisões orientadas por evidências.</p>
+</div>
+<div>
+<a href="../plataforma/">Plataforma</a>
+<a href="../produtos/">Produtos</a>
+<a href="../projetos/">Projetos</a>
+</div>
+<div>
+<a href="../codesenvolvimento/">Parcerias</a>
+<a href="../recursos/">Recursos</a>
+<a href="../quem-somos/">Quem somos</a>
+<a href="../ciencia/">Ciência e resultados</a>
+<a href="../areas-de-atuacao/">Áreas de atuação</a>
+<a href="../capacidades/">Capacidades</a>
+<a href="../relatorio-demonstrativo/">Relatório demonstrativo</a>
+</div>
+<div>
+<a href="../imprensa/">Imprensa</a>
+<a href="../quem-somos/#equipe">Equipe</a>
+<a href="../quem-somos/#trabalhe-conosco">Trabalhe conosco</a>
+<a href="./" aria-current="page">Contato</a>
+<a href="../privacidade/">Privacidade</a>
+</div>
+</div>
+<div class="copy">ArgosAI · Plataforma em desenvolvimento.<br>Resultados computacionais; validação experimental pendente.<br>Ilustrações moleculares conceituais.</div>
+</footer>
+</body>
+</html>

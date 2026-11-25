@@ -1,0 +1,57 @@
+[
+  {
+    "file": "argosai-apresentacao-institucional.pdf",
+    "bytes": 99554,
+    "sha256": "28ae9c7797d3c83d32f66ca400c6bc2c1d4b3b03117ab47c480f14c66343fedf",
+    "pdf_signature": true,
+    "has_eof": true
+  },
+  {
+    "file": "argosai-relatorio-publico.pdf",
+    "bytes": 71024,
+    "sha256": "b28d3b6b763c74f1c9a630a94eb118dda33c8e611e6595bcac1ad11ec25b2a03",
+    "pdf_signature": true,
+    "has_eof": true
+  },
+  {
+    "file": "imprensa/LEIA-ME.txt",
+    "bytes": 554,
+    "sha256": "2aaf8efe2769fde4d505841bd6293c62fb138cca820bbad9cd4d448854c234fd"
+  },
+  {
+    "file": "imprensa/argosai-assinatura.svg",
+    "bytes": 341,
+    "sha256": "9fb489e4b00f8d9c61b6fb5c1528f297ce40e86c53627bce227814d0406e00d7",
+    "svg_valid": true
+  },
+  {
+    "file": "imprensa/argosai-kit-imprensa.zip",
+    "bytes": 95359,
+    "sha256": "ebce9a79d597009212a46f63bd78ec250d2dcb7a021d09ebcbcf53dd473bd1d7",
+    "zip_error": null,
+    "contents": [
+      "LEIA-ME.txt",
+      "argosai-assinatura.svg",
+      "argosai-simbolo.svg",
+      "biografia-pedro.txt",
+      "sobre-argosai.txt",
+      "argosai-apresentacao-institucional.pdf"
+    ]
+  },
+  {
+    "file": "imprensa/argosai-simbolo.svg",
+    "bytes": 203,
+    "sha256": "9ecc3e14bb3280c2ada082e836a0727e08862849b8a19e24f0ad80102059da4e",
+    "svg_valid": true
+  },
+  {
+    "file": "imprensa/biografia-pedro.txt",
+    "bytes": 662,
+    "sha256": "3a9c06c66452c6f4d093499ee0984310588cea34a7cc1c8761624871c933b041"
+  },
+  {
+    "file": "imprensa/sobre-argosai.txt",
+    "bytes": 1387,
+    "sha256": "360db74e181153796fd0d0750583e31d5da0de1f4bf33005316edf4e0dfd6fd1"
+  }
+]
