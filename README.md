@@ -2,6 +2,12 @@
 
 Site institucional estático, publicado em https://romuload.github.io/argus-ai/ pela branch `main`, raiz do repositório.
 
+## Sistema visual (v3)
+
+`assets/site.css` define uma família tipográfica (Inter variável, auto-hospedada em `assets/fonts/`, licença OFL), dois fundos (branco e `--off`), três ritmos de seção (`.chapter`, `.section`, `.cta-band`), um único card (`.pathway`, `.fact`, `.reason`) e três breakpoints (1100, 768 e 560). Área e estágio dos programas aparecem como etiquetas `.stage` no fim do card, não como linha acima do título. `assets/og-argosai.png` é a imagem de compartilhamento.
+
+A home reordenou e agrupou o conteúdo de origem: a história do Marley vem logo após o hero, as duas faixas de links foram unidas e a seção de ciência mostra o recorte real do relatório demonstrativo. Por isso a comparação integral de texto de `tools/verify.cjs` acusa linhas da home e as linhas “área · estágio” como ausentes; o conteúdo continua presente, reescrito ou dividido.
+
 ## Conteúdo e navegação
 
 18 páginas HTML independentes e três variações do contato: `?interesse=projeto`, `?interesse=codesenvolvimento` e `?interesse=equipe`. Todos os caminhos de navegação e recursos são relativos, incluindo páginas em dois níveis. Não há roteador, dependências de produção ou etapa de compilação. `.nojekyll` mantém a publicação estática.
@@ -16,7 +22,7 @@ Nome, e-mail e contexto obrigatórios; organização opcional. Limites: 120, 254
 
 Os cinco arquivos de inventário recebidos estão preservados em `source/`, inclusive o ZIP completo, JSON de extração e TXT integral. `source/pages.json` registra a estrutura pública consultada em 25/11/2026 para recuperar hierarquia, tabelas e FAQs. A verificação compara cada linha do texto do inventário com o texto de cada página, inclusive respostas inicialmente fechadas. Não houve resumo editorial do conteúdo.
 
-O texto histórico de privacidade sobre recursos Porsche foi preservado e acompanhado de uma nota esclarecendo que esta reconstrução usa apenas recursos locais e fontes de sistema. Fotografias oficiais da equipe não foram fornecidas; seus espaços indicativos foram mantidos. A imagem de laboratório do site antigo foi substituída pela ilustração molecular da identidade aprovada.
+O texto histórico de privacidade sobre recursos Porsche foi preservado e acompanhado de uma nota esclarecendo que esta reconstrução usa apenas recursos locais. Fotografias oficiais da equipe não foram fornecidas; seus espaços indicativos foram mantidos. A imagem de laboratório do site antigo foi substituída pela ilustração molecular da identidade aprovada.
 
 ## Downloads
 
