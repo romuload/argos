@@ -29,3 +29,53 @@
   let url,link;try{url=URL.createObjectURL(new Blob(['\uFEFF',text],{type:'text/plain;charset=utf-8'}));link=document.createElement('a');link.href=url;link.download=`argosai-resumo-${values.interest}.txt`;link.hidden=true;document.body.append(link);link.click();feedback('Seu resumo está pronto.','O download do arquivo de texto foi iniciado. Confira a pasta de downloads do navegador. Nenhum dado foi enviado à ArgosAI.')}catch{feedback('Não foi possível iniciar o download.','Suas informações continuam nesta página. Tente novamente ou copie o texto antes de sair.')}finally{link?.remove();if(url)setTimeout(()=>URL.revokeObjectURL(url),1000)}
  });
 })();
+
+/* ===== Home: header sobre a hero + vídeo controlado pelo scroll ===== */
+(()=>{
+ const hero=document.querySelector('[data-hero-scroll]');if(!hero)return;
+ const header=document.querySelector('header'),root=document.documentElement;
+ const toggle=document.querySelector('.menu-toggle');
+ let frame=0;
+ function headerState(){const over=hero.getBoundingClientRect().bottom>header.offsetHeight;header.classList.toggle('is-over-hero',over)}
+ toggle?.addEventListener('click',()=>header.classList.toggle('menu-open',toggle.getAttribute('aria-expanded')==='true'));
+
+ const video=hero.querySelector('.hero-video');
+ let duration=0,ready=false,pending=false;
+ function progress(){const r=hero.getBoundingClientRect(),total=hero.offsetHeight-innerHeight;return total>0?Math.min(1,Math.max(0,-r.top/total)):0}
+ function seek(){
+  if(!ready)return;
+  if(video.seeking){pending=true;return}
+  const t=progress()*Math.max(0,duration-.04);
+  if(Math.abs(video.currentTime-t)>=1/48)video.currentTime=t;
+ }
+ function fallback(){root.classList.remove('hero-video-mode');ready=false;video.removeAttribute('src');video.load();schedule()}
+ function tick(){frame=0;headerState();seek()}
+ function schedule(){if(!frame)frame=requestAnimationFrame(tick)}
+
+ if(root.classList.contains('hero-video-mode')&&video){
+  video.muted=true;video.preload='auto';
+  video.addEventListener('loadedmetadata',()=>{if(isFinite(video.duration)&&video.duration>0){duration=video.duration;ready=true;schedule()}},{once:true});
+  video.addEventListener('seeked',()=>{if(pending){pending=false;schedule()}});
+  video.addEventListener('error',fallback,{once:true});
+  video.src=video.dataset.src;video.load();
+  setTimeout(()=>{if(!ready)fallback()},12000);
+ }
+ addEventListener('scroll',schedule,{passive:true});
+ addEventListener('resize',schedule);
+ matchMedia('(prefers-reduced-motion: reduce)').addEventListener?.('change',e=>{if(e.matches&&root.classList.contains('hero-video-mode'))fallback()});
+ headerState();
+})();
+
+/* ===== Plataforma: scrollytelling ===== */
+(()=>{
+ document.querySelectorAll('[data-scrolly]').forEach(block=>{
+  const steps=[...block.querySelectorAll('.scrolly-step')],imgs=[...block.querySelectorAll('.scrolly-img')],counter=block.querySelector('[data-scrolly-current]');
+  if(!steps.length||!('IntersectionObserver' in window))return;
+  // pré-carrega as imagens do painel fixo quando a seção se aproxima
+  const warm=new IntersectionObserver(es=>{if(es.some(e=>e.isIntersecting)){imgs.forEach(i=>i.loading='eager');warm.disconnect()}},{rootMargin:'600px 0px'});warm.observe(block);
+  let active=0;
+  function set(i){if(i===active)return;active=i;steps.forEach((s,k)=>s.classList.toggle('is-active',k===i));imgs.forEach((m,k)=>m.classList.toggle('is-active',k===i));if(counter)counter.textContent=String(i+1).padStart(2,'0')}
+  const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)set(steps.indexOf(e.target))})},{rootMargin:'-45% 0px -45% 0px'});
+  steps.forEach(s=>io.observe(s));
+ });
+})();

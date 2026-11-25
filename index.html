@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#f3f5f3">
+<meta name="theme-color" content="#10251e">
 <meta name="description" content="A ArgosAI organiza evidências computacionais para priorizar candidatos em pesquisa biomolecular: vacinas, terapias, formulações e diagnóstico veterinário.">
 <title>Pesquisa biomolecular orientada por evidências | ArgosAI</title>
 <meta property="og:type" content="website">
@@ -17,6 +17,7 @@
 <link rel="preload" href="assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="icon" href="downloads/imprensa/argosai-simbolo.svg">
 <link rel="stylesheet" href="assets/site.css">
+<script>(function(){var d=document.documentElement,c=navigator.connection;d.classList.add('js');if(matchMedia('(min-width: 768px)').matches&&!matchMedia('(prefers-reduced-motion: reduce)').matches&&!(c&&c.saveData))d.classList.add('hero-video-mode')})()</script>
 <script defer src="assets/site.js">
 </script>
 </head>
@@ -38,18 +39,26 @@
 </header>
 <main id="conteudo" tabindex="-1">
 <div class="page-content">
-<section aria-labelledby="home-title" class="hero reveal">
-<div class="hero-content">
+<section aria-labelledby="home-title" class="hero-scroll" data-hero-scroll>
+<div class="hero-stage">
+<picture class="hero-media hero-fallback">
+<source media="(max-width: 767px)" srcset="assets/images/hero/hero-poster-portrait.webp" width="891" height="1584">
+<source srcset="assets/images/hero/hero-poster-1200.webp 1200w, assets/images/hero/hero-poster.webp 2400w" sizes="100vw" width="2400" height="1350">
+<img src="assets/images/hero/hero-poster.webp" alt="" width="2400" height="1350" fetchpriority="high">
+</picture>
+<video class="hero-media hero-video" muted playsinline preload="none" disableremoteplayback aria-hidden="true" tabindex="-1" poster="assets/images/hero/hero-video-first-frame.webp" data-src="assets/videos/hero-scroll.mp4"></video>
+<div class="hero-shade" aria-hidden="true"></div>
+<div class="hero-copy">
 <h1 id="home-title">Reconhecer o que merece avançar.</h1>
 <p>Evidências computacionais para orientar a próxima decisão em pesquisa biomolecular.</p>
 <div class="hero-actions">
-<a data-testid="hero-projects" href="projetos/" class="btn">Tenho um projeto</a>
-<a data-testid="hero-codevelopment" href="codesenvolvimento/" class="btn">Quero codesenvolver</a>
+<a data-testid="hero-projects" href="projetos/" class="btn btn-light">Tenho um projeto</a>
+<a data-testid="hero-codevelopment" href="codesenvolvimento/" class="btn btn-ghost">Quero codesenvolver</a>
 </div>
 </div>
-<img class="hero-art molecule" src="assets/molecules/ribbon-blue.png" alt="Ilustração molecular conceitual" width="900" height="720" fetchpriority="high">
+</div>
 </section>
-<section aria-labelledby="home-story-title" class="section split chapter reveal">
+<section aria-labelledby="home-story-title" class="section split chapter story reveal">
 <h2 id="home-story-title">Tudo começou com Marley.</h2>
 <div class="text-stack">
 <p>Uma experiência pessoal com a leishmaniose se transformou em uma pergunta de pesquisa.</p>
@@ -60,23 +69,35 @@
 </div>
 </div>
 </section>
-<section aria-labelledby="why-argos-title" class="section reveal">
-<div class="section-heading">
+<section aria-labelledby="why-argos-title" class="section benefits">
+<div class="section-heading reveal">
 <h2 id="why-argos-title">Por que trabalhar com a ArgosAI?</h2>
 <p>Uma abordagem organizada em torno da decisão que sua equipe precisa tomar.</p>
 </div>
-<div class="reasons">
-<article class="reason">
-<h3>Critérios que podem ser examinados</h3>
+<div class="benefit-stack">
+<article class="benefit-card benefit-card--mist" aria-labelledby="benefit-1">
+<div class="benefit-text">
+<p class="benefit-index"><span class="visually-hidden">Benefício </span>01 / 03</p>
+<h3 id="benefit-1">Critérios que podem ser examinados</h3>
 <p>Discutimos premissas, fontes e critérios de seleção para que a priorização tenha uma justificativa compreensível.</p>
+</div>
+<figure class="benefit-media"><img src="assets/images/benefits/benefit-criteria.webp" alt="" width="1400" height="933" loading="lazy" decoding="async"></figure>
 </article>
-<article class="reason">
-<h3>Evidências vistas em conjunto</h3>
+<article class="benefit-card benefit-card--lavender" aria-labelledby="benefit-2">
+<div class="benefit-text">
+<p class="benefit-index"><span class="visually-hidden">Benefício </span>02 / 03</p>
+<h3 id="benefit-2">Evidências vistas em conjunto</h3>
 <p>Integramos sinais relevantes ao contexto do projeto, preservando as limitações de cada análise e as incertezas da conclusão.</p>
+</div>
+<figure class="benefit-media"><img src="assets/images/benefits/benefit-evidence.webp" alt="" width="1200" height="800" loading="lazy" decoding="async"></figure>
 </article>
-<article class="reason">
-<h3>Entregas definidas com você</h3>
+<article class="benefit-card benefit-card--sage" aria-labelledby="benefit-3">
+<div class="benefit-text">
+<p class="benefit-index"><span class="visually-hidden">Benefício </span>03 / 03</p>
+<h3 id="benefit-3">Entregas definidas com você</h3>
 <p>A pergunta, os dados disponíveis e a decisão esperada orientam a construção do escopo e dos entregáveis.</p>
+</div>
+<figure class="benefit-media"><img src="assets/images/benefits/benefit-deliverables.webp" alt="" width="1400" height="875" loading="lazy" decoding="async"></figure>
 </article>
 </div>
 <div class="link-row">
@@ -84,37 +105,46 @@
 <a data-testid="why-demo" href="relatorio-demonstrativo/" class="text-link">Veja o relatório demonstrativo, com registros reais anonimizados</a>
 </div>
 </section>
-<section aria-labelledby="home-products-title" class="section dark-section reveal">
+<section aria-labelledby="home-products-title" class="section products reveal">
 <div class="section-heading">
 <h2 id="home-products-title">Conheça nossos produtos em desenvolvimento.</h2>
 <p>Da pesquisa terapêutica ao diagnóstico veterinário, quatro frentes para avançar com evidências. Programas em desenvolvimento, ainda sem disponibilidade para uso clínico ou comercialização.</p>
 </div>
-<div class="pathways">
-<article class="pathway">
+<div class="product-grid">
+<article class="product">
+<figure class="product-media"><img src="assets/images/products/product-aso.webp" srcset="assets/images/products/product-aso-720.webp 720w, assets/images/products/product-aso.webp 1200w" sizes="(max-width: 768px) 100vw, 50vw" alt="" width="1200" height="900" loading="lazy" decoding="async"></figure>
+<p class="product-area">Pesquisa terapêutica</p>
 <h3>ASO para leishmaniose</h3>
 <p>Abordagem com oligonucleotídeos antissenso voltada à investigação de alvos de Leishmania. O programa explora candidatos terapêuticos e sua progressão para avaliação experimental.</p>
-<ul class="stage" aria-label="Área e estágio"><li>Pesquisa terapêutica</li><li>Desenvolvimento computacional</li></ul>
-<a href="produtos/aso-leishmaniose/" class="text-link">Conhecer o programa</a>
+<dl class="product-stage"><dt>Estágio</dt><dd>Desenvolvimento computacional</dd></dl>
+<a href="produtos/aso-leishmaniose/" class="text-link product-cta">Conhecer o programa<span class="visually-hidden">: ASO para leishmaniose</span></a>
 </article>
-<article class="pathway">
+<article class="product">
+<figure class="product-media"><img src="assets/images/products/product-peptides.webp" srcset="assets/images/products/product-peptides-720.webp 720w, assets/images/products/product-peptides.webp 1200w" sizes="(max-width: 768px) 100vw, 50vw" alt="" width="1200" height="900" loading="lazy" decoding="async"></figure>
+<p class="product-area">Pesquisa em vacinas</p>
 <h3>Vacina de peptídeos para leishmaniose</h3>
 <p>Programa de vacina baseada em peptídeos, com seleção e priorização computacional de candidatos para investigação da resposta imune contra Leishmania.</p>
-<ul class="stage" aria-label="Área e estágio"><li>Pesquisa em vacinas</li><li>Candidata em desenvolvimento</li></ul>
-<a href="produtos/vacina-peptideos/" class="text-link">Conhecer o programa</a>
+<dl class="product-stage"><dt>Estágio</dt><dd>Candidata em desenvolvimento</dd></dl>
+<a href="produtos/vacina-peptideos/" class="text-link product-cta">Conhecer o programa<span class="visually-hidden">: Vacina de peptídeos para leishmaniose</span></a>
 </article>
-<article class="pathway">
+<article class="product">
+<figure class="product-media"><img src="assets/images/products/product-chagas.webp" srcset="assets/images/products/product-chagas-720.webp 720w, assets/images/products/product-chagas.webp 1200w" sizes="(max-width: 768px) 100vw, 50vw" alt="" width="1200" height="900" loading="lazy" decoding="async"></figure>
+<p class="product-area">Pesquisa em formulações</p>
 <h3>Formulação para doença de Chagas</h3>
 <p>Frente dedicada ao desenvolvimento de uma formulação para investigação na doença de Chagas, ampliando o portfólio de pesquisa para Trypanosoma cruzi.</p>
-<ul class="stage" aria-label="Área e estágio"><li>Pesquisa em formulações</li><li>Em desenvolvimento</li></ul>
-<a href="produtos/formulacao-chagas/" class="text-link">Conhecer o programa</a>
+<dl class="product-stage"><dt>Estágio</dt><dd>Em desenvolvimento</dd></dl>
+<a href="produtos/formulacao-chagas/" class="text-link product-cta">Conhecer o programa<span class="visually-hidden">: Formulação para doença de Chagas</span></a>
 </article>
-<article class="pathway">
+<article class="product">
+<figure class="product-media"><img src="assets/images/products/product-diagnostics.webp" alt="" width="520" height="390" loading="lazy" decoding="async"></figure>
+<p class="product-area">Diagnóstico veterinário</p>
 <h3>Testes rápidos para erliquiose e babesiose</h3>
 <p>Protótipo voltado ao desenvolvimento de testes rápidos para erliquiose e babesiose, conectando pesquisa biomolecular às necessidades do diagnóstico veterinário.</p>
-<ul class="stage" aria-label="Área e estágio"><li>Diagnóstico veterinário</li><li>Protótipo</li></ul>
-<a href="produtos/testes-rapidos/" class="text-link">Conhecer o programa</a>
+<dl class="product-stage"><dt>Estágio</dt><dd>Protótipo</dd></dl>
+<a href="produtos/testes-rapidos/" class="text-link product-cta">Conhecer o programa<span class="visually-hidden">: Testes rápidos para erliquiose e babesiose</span></a>
 </article>
 </div>
+<p class="image-note">Imagens ilustrativas. Não representam candidatos, produtos finalizados nem resultados da ArgosAI.</p>
 </section>
 <section aria-labelledby="home-method-title" class="section split chapter reveal">
 <h2 id="home-method-title">Antes do próximo experimento, uma escolha.</h2>
@@ -127,7 +157,56 @@
 </div>
 </div>
 </section>
-<section aria-labelledby="home-science-title" class="section reveal">
+<section aria-labelledby="platform-title" class="section platform">
+<div class="section-heading reveal">
+<h2 id="platform-title">Da evidência à decisão experimental.</h2>
+<p>Uma abordagem integrada para comparar candidatos biomoleculares e tornar os critérios de priorização visíveis.</p>
+</div>
+<div class="scrolly" data-scrolly>
+<div class="scrolly-visual" aria-hidden="true">
+<div class="scrolly-frame">
+<img class="scrolly-img fit-cover is-active" data-step="0" src="assets/images/platform/platform-data.webp" alt="" width="1400" height="1050" loading="lazy" decoding="async">
+<img class="scrolly-img fit-contain" data-step="1" src="assets/images/platform/platform-analysis.webp" alt="" width="1280" height="669" loading="lazy" decoding="async">
+<img class="scrolly-img fit-contain" data-step="2" src="assets/images/platform/platform-prioritization.webp" alt="" width="1400" height="700" loading="lazy" decoding="async">
+<img class="scrolly-img fit-cover" data-step="3" src="assets/images/platform/platform-validation.webp" alt="" width="1400" height="788" loading="lazy" decoding="async">
+</div>
+<p class="scrolly-count"><span data-scrolly-current>01</span> / 04</p>
+<p class="scrolly-caption">Imagens ilustrativas</p>
+</div>
+<ol class="scrolly-steps" aria-label="Etapas da abordagem ArgosAI">
+<li class="scrolly-step is-active" data-step="0">
+<figure class="scrolly-step-media fit-cover"><img src="assets/images/platform/platform-data.webp" alt="" width="1400" height="1050" loading="lazy" decoding="async"></figure>
+<p class="scrolly-num">01</p>
+<h3>Dados</h3>
+<p>Definimos a pergunta científica, o contexto biológico e os dados adequados ao escopo. Registramos as fontes e suas limitações.</p>
+</li>
+<li class="scrolly-step" data-step="1">
+<figure class="scrolly-step-media fit-contain"><img src="assets/images/platform/platform-analysis.webp" alt="" width="1280" height="669" loading="lazy" decoding="async"></figure>
+<p class="scrolly-num">02</p>
+<h3>Análise</h3>
+<p>Aplicamos análises computacionais de sequência, conservação, estrutura e imunologia conforme a necessidade de cada projeto.</p>
+</li>
+<li class="scrolly-step" data-step="2">
+<figure class="scrolly-step-media fit-contain"><img src="assets/images/platform/platform-prioritization.webp" alt="" width="1400" height="700" loading="lazy" decoding="async"></figure>
+<p class="scrolly-num">03</p>
+<h3>Priorização</h3>
+<p>Comparamos candidatos com critérios explícitos e organizamos as evidências para orientar a escolha do que investigar.</p>
+</li>
+<li class="scrolly-step" data-step="3">
+<figure class="scrolly-step-media fit-cover"><img src="assets/images/platform/platform-validation.webp" alt="" width="1400" height="788" loading="lazy" decoding="async"></figure>
+<p class="scrolly-num">04</p>
+<h3>Validação experimental</h3>
+<p>Com capacidades experimentais complementares, planejamos como testar as hipóteses. Esta validação permanece pendente nos programas apresentados.</p>
+</li>
+</ol>
+<p class="image-note scrolly-note">Imagens ilustrativas.</p>
+</div>
+<div class="link-row">
+<a href="plataforma/" class="text-link">Conhecer a plataforma</a>
+<a href="capacidades/" class="text-link">Capacidades de pesquisa</a>
+</div>
+</section>
+<section aria-labelledby="home-science-title" class="section dark-section science reveal">
 <div class="section-heading">
 <h2 id="home-science-title">Ciência que pode ser examinada.</h2>
 <p>A proposta é apoiar a seleção de candidatos. A comprovação de eficácia depende da pesquisa experimental.</p>
@@ -162,33 +241,39 @@
 <a href="ciencia/" class="text-link">Ciência e resultados</a>
 </div>
 </section>
-<section aria-labelledby="collaboration-title" class="section dark-section reveal">
+<section aria-labelledby="collaboration-title" class="section collab reveal">
 <div class="section-heading">
 <h2 id="collaboration-title">O próximo passo pode ser conjunto.</h2>
 <p>Duas formas de conectar nossa abordagem à sua pesquisa.</p>
 </div>
-<div class="pathways">
-<article class="pathway">
+<div class="duo">
+<article class="duo-item">
 <h3>Projetos sob demanda</h3>
 <p>Uma pergunta definida, uma análise direcionada e entregáveis construídos para a decisão da sua equipe.</p>
-<a data-testid="explore-projects" href="projetos/" class="text-link">Conhecer os projetos</a>
+<a data-testid="explore-projects" href="projetos/" class="btn">Conhecer os projetos</a>
 </article>
-<article class="pathway">
+<article class="duo-item duo-item--teal">
 <h3>Codesenvolvimento</h3>
 <p>Capacidades complementares para investigar candidatos e desenvolver programas de pesquisa terapêutica, vacinas, formulações e diagnóstico.</p>
-<a data-testid="explore-codevelopment" href="codesenvolvimento/" class="text-link">Explorar a colaboração</a>
+<a data-testid="explore-codevelopment" href="codesenvolvimento/" class="btn btn-light">Explorar a colaboração</a>
 </article>
 </div>
 </section>
-<section aria-labelledby="resources-title" class="section reveal">
+<section aria-labelledby="resources-title" class="section resources reveal">
+<div class="resources-grid">
+<div>
 <h2 id="resources-title">Conheça a ciência. Compartilhe a visão.</h2>
-<p class="lede-muted">Leve uma apresentação da ArgosAI para a próxima conversa com sua equipe.</p>
-<div class="link-row">
-<a data-testid="research-capabilities" href="capacidades/" class="text-link">Capacidades de pesquisa</a>
-<a href="recursos/" class="text-link">Novidades e materiais</a>
-<a href="imprensa/" class="text-link">Kit de imprensa</a>
-<a href="quem-somos/#trabalhe-conosco" class="text-link">Trabalhe conosco</a>
-<a data-testid="download-presentation" href="downloads/argosai-apresentacao-institucional.pdf" download="" class="btn">Baixar apresentação institucional (PDF, 6 páginas)</a>
+<p class="lede-muted">Explore as evidências disponíveis e leve uma apresentação da ArgosAI para a próxima conversa com sua equipe.</p>
+</div>
+<ul class="resource-list">
+<li><a data-testid="research-capabilities" href="capacidades/"><span>Capacidades de pesquisa</span><span class="resource-kind">Página</span></a></li>
+<li><a href="ciencia/"><span>Ciência e resultados</span><span class="resource-kind">Página</span></a></li>
+<li><a href="recursos/"><span>Novidades e materiais</span><span class="resource-kind">Página</span></a></li>
+<li><a href="imprensa/"><span>Kit de imprensa</span><span class="resource-kind">Página</span></a></li>
+<li><a href="quem-somos/#trabalhe-conosco"><span>Trabalhe conosco</span><span class="resource-kind">Página</span></a></li>
+<li><a data-testid="download-presentation" href="downloads/argosai-apresentacao-institucional.pdf" download=""><span>Apresentação institucional</span><span class="resource-kind">PDF · 6 páginas · 97 KB</span></a></li>
+<li><a href="downloads/argosai-relatorio-publico.pdf" download=""><span>Relatório público</span><span class="resource-kind">PDF · 3 páginas · 69 KB</span></a></li>
+</ul>
 </div>
 </section>
 </div>
