@@ -589,3 +589,6 @@ a.text-link[download]:hover::after,a.text-link[href$=".pdf"]:hover::after,a.text
   .line-inner{animation:none;transform:none}
   .scrolly-steps::after{clip-path:inset(0 0 calc(100% - var(--p) * 100%) 0)}
 }
+/* ação final do card ancorada no rodapé, alinhada entre cards vizinhos */
+.pathway>.btn:last-child,.pathway.text-stack>.btn:last-child{margin-top:auto;align-self:flex-start}
+.pathway>:nth-last-child(2):not(.text-link){margin-bottom:24px}

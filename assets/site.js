@@ -123,8 +123,33 @@
   h.setAttribute('aria-label',h.textContent.trim());
   return ()=>{h.innerHTML=original;h.removeAttribute('aria-label')};
  }
- const heads=[...document.querySelectorAll('main section h2')].filter(h=>below(h)&&!h.closest('.hero-scroll'));
+ const heads=[...document.querySelectorAll('main section h2')].filter(h=>below(h)&&!h.closest('.hero-scroll,.pathway,.product,.fact,.duo-item,.reason'));
  heads.forEach(h=>h.classList.add('lines-wait'));
  const hio=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const h=e.target;hio.unobserve(h);const restore=split(h);h.classList.remove('lines-wait');if(restore)setTimeout(restore,900+70*6)}),{threshold:0,rootMargin:'0px 0px -12% 0px'});
  heads.forEach(h=>hio.observe(h));
+})();
+
+/* ===== Cards lado a lado: títulos da mesma fileira com a mesma altura ===== */
+(()=>{
+ const GRIDS='.product-grid,.pathways,.facts,.duo,.reasons,.process-list,.team-grid';
+ const titleOf=item=>item.querySelector('h2,h3');
+ let frame=0;
+ function equalize(){
+  frame=0;
+  document.querySelectorAll(GRIDS).forEach(grid=>{
+   const items=[...grid.children].filter(i=>i.offsetParent!==null);
+   items.forEach(i=>{const t=titleOf(i);if(t)t.style.minHeight=''});
+   const rows=new Map();
+   items.forEach(i=>{const top=Math.round(i.getBoundingClientRect().top+scrollY);if(!rows.has(top))rows.set(top,[]);rows.get(top).push(i)});
+   rows.forEach(row=>{
+    if(row.length<2)return;
+    const titles=row.map(titleOf).filter(Boolean);
+    const max=Math.max(...titles.map(t=>t.getBoundingClientRect().height));
+    titles.forEach(t=>{if(t.getBoundingClientRect().height<max-1)t.style.minHeight=max+'px'});
+   });
+  });
+ }
+ const schedule=()=>{if(!frame)frame=requestAnimationFrame(equalize)};
+ addEventListener('resize',schedule);addEventListener('load',schedule);
+ document.fonts?.ready.then(schedule);schedule();
 })();
