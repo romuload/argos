@@ -1,115 +1,115 @@
 {
   "http": [
     {
-      "url": "http://localhost:8917/argus-ai/",
+      "url": "http://localhost:8917/argos/",
       "status": 200
     },
     {
-      "url": "http://localhost:8917/argus-ai/plataforma/",
+      "url": "http://localhost:8917/argos/plataforma/",
       "status": 200
     },
     {
-      "url": "http://localhost:8917/argus-ai/produtos/",
+      "url": "http://localhost:8917/argos/produtos/",
       "status": 200
     },
     {
-      "url": "http://localhost:8917/argus-ai/projetos/",
+      "url": "http://localhost:8917/argos/projetos/",
       "status": 200
     },
     {
-      "url": "http://localhost:8917/argus-ai/codesenvolvimento/",
+      "url": "http://localhost:8917/argos/codesenvolvimento/",
       "status": 200
     },
     {
-      "url": "http://localhost:8917/argus-ai/recursos/",
+      "url": "http://localhost:8917/argos/recursos/",
       "status": 200
     },
     {
-      "url": "http://localhost:8917/argus-ai/quem-somos/",
+      "url": "http://localhost:8917/argos/quem-somos/",
       "status": 200
     },
     {
-      "url": "http://localhost:8917/argus-ai/contato/",
+      "url": "http://localhost:8917/argos/contato/",
       "status": 200
     },
     {
-      "url": "http://localhost:8917/argus-ai/capacidades/",
+      "url": "http://localhost:8917/argos/capacidades/",
       "status": 200
     },
     {
-      "url": "http://localhost:8917/argus-ai/relatorio-demonstrativo/",
+      "url": "http://localhost:8917/argos/relatorio-demonstrativo/",
       "status": 200
     },
     {
-      "url": "http://localhost:8917/argus-ai/produtos/aso-leishmaniose/",
+      "url": "http://localhost:8917/argos/produtos/aso-leishmaniose/",
       "status": 200
     },
     {
-      "url": "http://localhost:8917/argus-ai/produtos/vacina-peptideos/",
+      "url": "http://localhost:8917/argos/produtos/vacina-peptideos/",
       "status": 200
     },
     {
-      "url": "http://localhost:8917/argus-ai/produtos/formulacao-chagas/",
+      "url": "http://localhost:8917/argos/produtos/formulacao-chagas/",
       "status": 200
     },
     {
-      "url": "http://localhost:8917/argus-ai/produtos/testes-rapidos/",
+      "url": "http://localhost:8917/argos/produtos/testes-rapidos/",
       "status": 200
     },
     {
-      "url": "http://localhost:8917/argus-ai/areas-de-atuacao/",
+      "url": "http://localhost:8917/argos/areas-de-atuacao/",
       "status": 200
     },
     {
-      "url": "http://localhost:8917/argus-ai/ciencia/",
+      "url": "http://localhost:8917/argos/ciencia/",
       "status": 200
     },
     {
-      "url": "http://localhost:8917/argus-ai/imprensa/",
+      "url": "http://localhost:8917/argos/imprensa/",
       "status": 200
     },
     {
-      "url": "http://localhost:8917/argus-ai/downloads/argosai-apresentacao-institucional.pdf",
+      "url": "http://localhost:8917/argos/downloads/argosai-apresentacao-institucional.pdf",
       "status": 200
     },
     {
-      "url": "http://localhost:8917/argus-ai/privacidade/",
+      "url": "http://localhost:8917/argos/privacidade/",
       "status": 200
     },
     {
-      "url": "http://localhost:8917/argus-ai/contato/?interesse=projeto",
+      "url": "http://localhost:8917/argos/contato/?interesse=projeto",
       "status": 200
     },
     {
-      "url": "http://localhost:8917/argus-ai/contato/?interesse=codesenvolvimento",
+      "url": "http://localhost:8917/argos/contato/?interesse=codesenvolvimento",
       "status": 200
     },
     {
-      "url": "http://localhost:8917/argus-ai/contato/?interesse=equipe",
+      "url": "http://localhost:8917/argos/contato/?interesse=equipe",
       "status": 200
     },
     {
-      "url": "http://localhost:8917/argus-ai/downloads/argosai-relatorio-publico.pdf",
+      "url": "http://localhost:8917/argos/downloads/argosai-relatorio-publico.pdf",
       "status": 200
     },
     {
-      "url": "http://localhost:8917/argus-ai/downloads/imprensa/argosai-kit-imprensa.zip",
+      "url": "http://localhost:8917/argos/downloads/imprensa/argosai-kit-imprensa.zip",
       "status": 200
     },
     {
-      "url": "http://localhost:8917/argus-ai/downloads/imprensa/sobre-argosai.txt",
+      "url": "http://localhost:8917/argos/downloads/imprensa/sobre-argosai.txt",
       "status": 200
     },
     {
-      "url": "http://localhost:8917/argus-ai/downloads/imprensa/biografia-pedro.txt",
+      "url": "http://localhost:8917/argos/downloads/imprensa/biografia-pedro.txt",
       "status": 200
     },
     {
-      "url": "http://localhost:8917/argus-ai/downloads/imprensa/argosai-assinatura.svg",
+      "url": "http://localhost:8917/argos/downloads/imprensa/argosai-assinatura.svg",
       "status": 200
     },
     {
-      "url": "http://localhost:8917/argus-ai/downloads/imprensa/argosai-simbolo.svg",
+      "url": "http://localhost:8917/argos/downloads/imprensa/argosai-simbolo.svg",
       "status": 200
     }
   ],

@@ -1,6 +1,6 @@
 # ArgosAI
 
-Site institucional estático, publicado em https://romuload.github.io/argus-ai/ pela branch `main`, raiz do repositório.
+Site institucional estático, publicado em https://romuload.github.io/argos/ pela branch `main`, raiz do repositório.
 
 ## Sistema visual (v3)
 
@@ -32,6 +32,6 @@ Os oito arquivos em `downloads/` foram comparados byte a byte com a origem, com 
 
 Resultados em `verification/`: 18 páginas × quatro larguras (320, 390, 768 e 1440), integridade de links e âncoras, comparação integral de texto, três downloads reais do formulário, campos obrigatórios, e-mail inválido, espaços vazios, ausência de persistência e envio, menus, FAQs, abertura por `file:`, movimento reduzido e sticky medido no desktop. 28 destinos únicos retornaram HTTP 200 na prévia local.
 
-Para repetir os testes no navegador, instale `playwright-core` como ferramenta de desenvolvimento e rode `node tools/verify.cjs`. Use `SITE_URL` para a URL da prévia terminando em `/argus-ai/`, `CHROME_PATH` para o executável do Chrome e, se necessário, `PLAYWRIGHT_MODULE` para o módulo instalado. Sirva a pasta pai do repositório com `python3 -m http.server 8917`. Os resultados vão para `.verification/`. Nenhuma dessas ferramentas é carregada pelo site.
+Para repetir os testes no navegador, instale `playwright-core` como ferramenta de desenvolvimento e rode `node tools/verify.cjs`. Use `SITE_URL` para a URL da prévia terminando em `/argos/`, `CHROME_PATH` para o executável do Chrome e, se necessário, `PLAYWRIGHT_MODULE` para o módulo instalado. Sirva a pasta pai do repositório com `python3 -m http.server 8917`. Os resultados vão para `.verification/`. Nenhuma dessas ferramentas é carregada pelo site.
 
 O medidor visual opcional exigia Node 22; o ambiente dispunha de Node 20. As capturas e os testes responsivos foram feitos diretamente no Chrome com Playwright. As escolhas visuais da identidade aprovada prevaleceram sobre regras estéticas genéricas.
