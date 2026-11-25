@@ -638,3 +638,15 @@ section .cta-band>.steps-inline+.btn{margin-top:28px}
   h1{hyphens:manual;-webkit-hyphens:manual}
   .page-intro h1{font-size:clamp(28px,8.6vw,40px)}
 }
+/* seção de prosa: a largura de leitura vale para o texto, não para a seção (evita coluna espremida em telas largas) */
+section.prose{max-width:none}
+section.prose>*{max-width:760px}
+/* hero: título em duas linhas equilibradas, ocupando cerca de metade da largura */
+.hero-copy h1{font-size:clamp(46px,5.6vw,104px);max-width:15.5ch}
+@media(max-width:768px){.hero-copy h1{font-size:clamp(38px,10.6vw,60px);max-width:none}}
+/* títulos de seção um pouco menores em telas estreitas: palavras longas cabem com a vizinha */
+@media(max-width:400px){
+  h2{font-size:30px}
+  .page-intro h1{font-size:clamp(28px,8.2vw,34px)}
+  summary{font-size:17px}
+}

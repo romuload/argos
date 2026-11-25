@@ -26,6 +26,12 @@ Imagens em `assets/images/{hero,benefits,products,platform}/`, em WebP e com nom
 - O vídeo da hero foi entregue em 992×432; foi ampliado para 1440px, o que deixa a imagem suave em telas grandes. Uma versão com pelo menos 1920px de largura melhora o resultado sem mudar o código.
 - Não há fotografias reais de Marley no repositório; a seção segue só com texto.
 
+## Tipografia: viúvas e palavras curtas
+
+- No HTML, palavras de uma letra (a, à, o, e, é) ficam unidas à seguinte por `&nbsp;`, para valer mesmo sem JavaScript.
+- Em `site.js`, um ajuste mede as linhas de cada título, parágrafo, item, pergunta e célula na largura atual e une ao vizinho artigos, preposições e conjunções curtas que terminariam uma linha, além da última palavra quando ela ficaria sozinha (menos de 10 letras). Só mantém a junção se o bloco unido couber numa linha, a largura não crescer e o total de problemas não aumentar; refaz ao redimensionar.
+- Textos novos: escreva normalmente; para quebras editoriais em títulos, use `<br>` e `&nbsp;`.
+
 ## Conteúdo e navegação
 
 18 páginas HTML independentes e três variações do contato: `?interesse=projeto`, `?interesse=codesenvolvimento` e `?interesse=equipe`. Todos os caminhos de navegação e recursos são relativos, incluindo páginas em dois níveis. Não há roteador, dependências de produção ou etapa de compilação. `.nojekyll` mantém a publicação estática.
