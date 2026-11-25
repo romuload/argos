@@ -615,3 +615,13 @@ section .cta-band>.steps-inline+.btn{margin-top:28px}
 .fact.split .text-stack>p:first-child{font-size:17px;line-height:1.55;letter-spacing:0}
 .fact.split .text-stack>h3{font-size:18px;margin-top:28px}
 .fact.split .text-stack>.text-link{margin-top:14px}
+
+/* =========================================================
+   v4.4 · Molécula 3D vetorial (painel da Plataforma)
+   ========================================================= */
+.mol3d{position:absolute;inset:0;width:100%;height:100%;display:block}
+.scrolly.has-mol .scrolly-img{display:none}
+.scrolly.has-mol .scrolly-frame{background:radial-gradient(120% 90% at 50% 40%,#fff 0%,var(--off) 100%)}
+.mol3d line{stroke:#7fa3ac;stroke-linecap:round}
+.mol-pending{stroke:var(--accent);stroke-width:1.2;stroke-dasharray:4 6}
+@media(max-width:900px){.mol3d{display:none}}

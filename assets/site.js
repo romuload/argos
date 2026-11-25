@@ -86,7 +86,7 @@
   const schedule=()=>{if(!frame)frame=requestAnimationFrame(rail)};
   addEventListener('scroll',schedule,{passive:true});addEventListener('resize',schedule);schedule();
   if(!('IntersectionObserver' in window))return;
-  const warm=new IntersectionObserver(es=>{if(es.some(e=>e.isIntersecting)){imgs.forEach(i=>i.loading='eager');warm.disconnect()}},{rootMargin:'600px 0px'});warm.observe(block);
+  const warm=new IntersectionObserver(es=>{if(es.some(e=>e.isIntersecting)){if(!block.classList.contains('has-mol'))imgs.forEach(i=>i.loading='eager');warm.disconnect()}},{rootMargin:'600px 0px'});warm.observe(block);
   const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)set(steps.indexOf(e.target))})},{rootMargin:'-45% 0px -45% 0px'});
   steps.forEach(s=>io.observe(s));
  });
