@@ -592,3 +592,26 @@ a.text-link[download]:hover::after,a.text-link[href$=".pdf"]:hover::after,a.text
 /* ação final do card ancorada no rodapé, alinhada entre cards vizinhos */
 .pathway>.btn:last-child,.pathway.text-stack>.btn:last-child{margin-top:auto;align-self:flex-start}
 .pathway>:nth-last-child(2):not(.text-link){margin-bottom:24px}
+
+/* =========================================================
+   v4.3 · Composição: largura cheia para grades, lado a lado
+   quando os itens são pares
+   ========================================================= */
+/* seções de leitura: só o texto corrido fica estreito; grades e FAQ usam a largura toda */
+.section-narrow>.facts,.section-narrow>.process-list,.section-narrow>.pathways,.section-narrow>details,.section-narrow>.faq,.section-narrow>.text-stack:has(>.facts,>details){max-width:none}
+/* equipe com três pessoas em três colunas */
+@media(min-width:900px){.team-grid:has(>:nth-child(3):last-child){grid-template-columns:repeat(3,minmax(0,1fr))}}
+/* passos de um processo lado a lado */
+.steps-inline{list-style:none;counter-reset:step;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin:24px 0 8px;padding:0}
+.steps-inline li{counter-increment:step;padding-top:16px;border-top:1px solid var(--ink);font-size:var(--fs-small);line-height:1.6}
+.steps-inline li::before{content:counter(step);display:block;margin-bottom:8px;color:var(--muted);font-variant-numeric:tabular-nums}
+section .cta-band>.steps-inline+.btn{margin-top:28px}
+@media(max-width:768px){.steps-inline{grid-template-columns:1fr;gap:16px}}
+/* card de área: empilhado, sem o layout de duas colunas de seção */
+.fact.split{display:flex;flex-direction:column;gap:0}
+.fact.split>h2{position:static;margin-bottom:16px}
+/* títulos de card no mesmo tamanho em todas as páginas */
+.pathway h2,.fact h2{font-size:clamp(24px,2.2vw,32px);line-height:1.12;letter-spacing:-.025em;font-weight:450}
+.fact.split .text-stack>p:first-child{font-size:17px;line-height:1.55;letter-spacing:0}
+.fact.split .text-stack>h3{font-size:18px;margin-top:28px}
+.fact.split .text-stack>.text-link{margin-top:14px}
